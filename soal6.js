@@ -1,23 +1,19 @@
 /*  menggunakan arrow function
         if dataAngka dan array {
             const secondLargestNumber {
-                proses sorting angka dan me-return index ke-2
-            } 
-            return secondLargestNumber  
+                set untuk menghilangkan dataAngka duplikat dan mengurutkannya kemudian reverse dataAngka dengan mengambil index ke-2
+            return secondLargestNumber 
         } else {
             return error
         }
-
 */
 
-const getAngkaTerbesarKedua = (dataAngka) => {
-    if ( dataAngka && Array.isArray(dataAngka) ) {
-        const secondLargestNumber = dataAngka.sort((a, b) => {
-            return b - a;
-          })[1];
-        return secondLargestNumber;
-    } else {
-        return "ERROR : Invalid data type and Invalid parameter"
+const getAngkaTerbesarKedua = ( dataAngka) =>{
+    if( dataAngka ){
+        const secondLargestNumber = [...new Set(dataAngka.sort().reverse())];
+    return secondLargestNumber[1];
+    }else{
+        return "Error: Invalid data type and Invalid parameter"
     }
 }
 

@@ -16,7 +16,6 @@
             return error data type bukan string
         }
         return nameObject 
-
 */
 
 const getSplitName = (personName) => {

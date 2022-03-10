@@ -6,17 +6,9 @@
             return Error invalid data type
         } else if memenuhi karakter regex {
             return True
-        } else if tidak ada angka {
-            return False
-        } else if tidak ada huruf kecil {
-            return False
-        } else if tidak ada huruf besar {
-            return False
-        } else if tidak memenuhi 8 karakter {
-            return False
         } else {
-            return False
-        }
+            return False : tidak memenuhi karakter regex
+        } 
 */
 
 const isValidPassword = (givenPassword) => {
@@ -28,18 +20,6 @@ const isValidPassword = (givenPassword) => {
         return "ERROR : Invalid data type";
     } else if ( regex.test(givenPassword) ) {
         return "True";
-    } else if ( !/(?=.*[0-9])/.test(givenPassword) ) {
-        // Tidak ada angka
-        return "False"; 
-    } else if ( !/(?=.*[a-z])/.test(givenPassword) ){
-        // Tidak huruf kecil
-        return "False"; 
-    } else if ( !/(?=.*[A-Z])/.test(givenPassword) ){
-        // Tidak ada huruf besar
-        return "False"; 
-    } else if ( !/.{8,}/.test(givenPassword) ){
-        // Minimal 8 karakter
-        return "False"; 
     } else {
         return "False";
     }
